@@ -1,0 +1,16 @@
+.card {
+	padding-right: 5px;
+	width: 248px;
+	height: 318px;
+}
+
+.card:hover {
+	cursor: pointer;
+}
+
+img {
+	width: 248px;
+	height: 318px;
+	object-fit: fill;
+	border-radius: 10px;
+}

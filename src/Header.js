@@ -22,7 +22,7 @@ class Header extends Component {
 				</div>
 				<div className="header__right">
 					<form>
-						<BsSearch className="search__icon" />
+						<BsSearch className="search__icon" size=".85em" />
 						<input
 							type="text"
 							id="header__search"
