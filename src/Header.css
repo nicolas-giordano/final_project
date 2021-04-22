@@ -2,8 +2,12 @@
 	height: 65px;
 	background-color: rgb(20, 20, 20);
 	font-size: 24px;
-	color: white;
+	color: #e5e5e5;
 	display: flex;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 }
 
@@ -14,7 +18,16 @@
 
 .header__item:hover {
 	cursor: pointer;
-	color: red;
+	color: rgb(146, 143, 143);
+}
+
+.header__left {
+	display: flex;
+}
+
+.header__right {
+	margin-right: 25px;
+	position: relative;
 }
 
 .categories__menu {
@@ -22,23 +35,48 @@
 }
 
 .dropdown {
+	border: 0.5px solid rgb(41, 41, 41);
+	padding: 10px;
 	position: absolute;
 	left: 25px;
 	width: 100px;
-	font-size: 20px;
+	font-size: 16px;
 	display: none;
-	background-color: lightslategrey;
+	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 10;
-	text-align: center;
 }
 
 .dropdown a:hover {
-	color: red;
-	background-color: black;
+	text-decoration: underline;
 }
 
 .categories__menu:hover .dropdown {
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
+}
+
+#header__search {
+	border: 0.5px solid gray;
+	border-radius: 7px;
+	height: 30px;
+	width: 200px;
+	color: rgba(85, 87, 85, 0.867);
+	font-size: 18px;
+}
+
+#header__search:focus {
+	outline: none;
+}
+
+.header__right input {
+	padding-left: 55px;
+}
+
+.search__icon {
+	color: black;
+	position: absolute;
+	z-index: 200;
+	top: 4.5px;
+	left: 15px;
 }
