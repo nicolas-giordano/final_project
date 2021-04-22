@@ -1,6 +1,6 @@
 .header {
 	height: 65px;
-	background-color: dimgray;
+	background-color: rgb(20, 20, 20);
 	font-size: 24px;
 	color: white;
 	display: flex;
@@ -9,7 +9,7 @@
 
 .header__item {
 	padding-left: 25px;
-	text-shadow: 5px -2px 6px black;
+	text-shadow: 5px -1px 6px black;
 }
 
 .header__item:hover {
