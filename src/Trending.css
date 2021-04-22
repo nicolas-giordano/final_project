@@ -1,0 +1,16 @@
+.test {
+    width: 298px;
+    height: 168px;
+    background-color: gray;
+}
+
+.card__listing {
+    display: flex;
+    justify-content: space-between
+}
+
+img {
+    width: 298px;
+    height: 318px;
+    object-fit: fill;
+}
