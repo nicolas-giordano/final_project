@@ -1,4 +1,6 @@
+body {
+    background-color: rgb(179, 185, 192);
+}
 #anime__listings {
-    margin-left: 15px;
-    margin-right: 15px
+    margin: 0 60px;
 }

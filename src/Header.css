@@ -1,5 +1,43 @@
-#header {
+.header {
     height: 65px;
     background-color: dimgray;
-    color: white
+    font-size: 24px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.header__item {
+    padding-left: 25px;
+}
+
+.header__item:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.categories__menu {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    left: 25px;
+    width: 100px;
+    font-size: 20px;
+    display: none;
+    background-color: lightslategrey;
+    z-index: 10;
+    text-align: center;
+}
+
+.dropdown a:hover{
+    color: red;
+    background-color: black;
+}
+
+.categories__menu:hover .dropdown{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
