@@ -2,7 +2,7 @@
 	height: 65px;
 	background-color: rgb(20, 20, 20);
 	font-size: 24px;
-	color: #e5e5e5;
+	color: #c2c2c2;
 	display: flex;
 	align-items: center;
 	display: flex;
@@ -41,7 +41,7 @@
 	position: absolute;
 	left: 25px;
 	width: 100px;
-	font-size: 16px;
+	font-size: 18px;
 	display: none;
 	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 10;
@@ -80,4 +80,13 @@
 	z-index: 200;
 	top: 6px;
 	left: 10px;
+}
+
+#current {
+	text-decoration: underline;
+	color: #e5e5e5;
+}
+
+#current:hover {
+	cursor: default;
 }

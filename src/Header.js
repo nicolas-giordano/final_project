@@ -3,13 +3,39 @@ import { BsSearch } from 'react-icons/bs';
 import './Header.css';
 
 class Header extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			current: 'Home',
+		};
+	}
+
 	render() {
 		return (
 			<section className="header">
 				<div className="header__left">
-					<span className="header__item">Home</span>
+					<span
+						className="header__item"
+						id={
+							document.getElementsByClassName('header__item')[0].innerHTML ===
+							this.state.current
+								? 'current'
+								: ''
+						}
+					>
+						Home
+					</span>
 					<div className="categories__menu">
-						<span id="category" className="header__item">
+						<span
+							id={
+								document.getElementsByClassName('header__item')[1].innerHTML ===
+								this.state.current
+									? 'current'
+									: ''
+							}
+							className="header__item"
+						>
 							Categories
 						</span>
 						<div className="dropdown">
@@ -18,7 +44,17 @@ class Header extends Component {
 							<a>Test3</a>
 						</div>
 					</div>
-					<span className="header__item">Top 100</span>
+					<span
+						className="header__item"
+						id={
+							document.getElementsByClassName('header__item')[2].innerHTML ===
+							this.state.current
+								? 'current'
+								: ''
+						}
+					>
+						Top 100
+					</span>
 				</div>
 				<div className="header__right">
 					<form>

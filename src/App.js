@@ -8,39 +8,52 @@ class App extends Component {
 		super(props);
 
 		this.state = {
-			anime: [],
+			trending: [],
+			combat: [],
+			fantasy: [],
 		};
 	}
 
 	componentDidMount() {
 		let self = this;
 		let request_trending = new XMLHttpRequest();
-		let request_categories = new XMLHttpRequest();
+		let request_combat = new XMLHttpRequest();
+		let request_fantasy = new XMLHttpRequest();
 
 		request_trending.onreadystatechange = function () {
 			if (this.readyState === 4 && this.status === 200) {
 				let data = JSON.parse(this.responseText).data;
-				console.log(JSON.parse(this.responseText).data);
-				self.setState({ anime: data });
+				self.setState({ trending: data });
 			}
 		};
 
 		request_trending.open('GET', 'https://kitsu.io/api/edge/anime');
 		request_trending.send();
 
-		request_categories.onreadystatechange = function () {
+		request_combat.onreadystatechange = function () {
 			if (this.readyState === 4 && this.status === 200) {
 				let data = JSON.parse(this.responseText).data;
-				console.log(data);
-				data.map((category) => console.log(category.attributes.title));
+				self.setState({ combat: data });
+			}
+		};
+		request_combat.open(
+			'GET',
+			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=combat'
+		);
+		request_combat.send();
+
+		request_fantasy.onreadystatechange = function () {
+			if (this.readyState === 4 && this.status === 200) {
+				let data = JSON.parse(this.responseText).data;
+				self.setState({ fantasy: data });
 			}
 		};
 
-		request_categories.open(
+		request_fantasy.open(
 			'GET',
-			'https://kitsu.io/api/edge/categories?page%5Blimit%5D=100'
+			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=fantasy'
 		);
-		request_categories.send();
+		request_fantasy.send();
 	}
 
 	render() {
@@ -51,8 +64,36 @@ class App extends Component {
 					<div className="trending">
 						<h1>Trending Anime</h1>
 						<div className="anime__cards">
-							{this.state.anime.map((anime) => (
-								<Card img={anime.attributes.posterImage.small} id={anime.id} />
+							{this.state.trending.map((anime) => (
+								<Card
+									img={anime.attributes.posterImage.small}
+									id={anime.id}
+									key={anime.id}
+								/>
+							))}
+						</div>
+					</div>
+					<div className="combat">
+						<h1>Fighting</h1>
+						<div className="anime__cards">
+							{this.state.combat.map((anime) => (
+								<Card
+									img={anime.attributes.posterImage.small}
+									id={anime.id}
+									key={anime.id}
+								/>
+							))}
+						</div>
+					</div>
+					<div className="fantasy">
+						<h1>Fatasy World</h1>
+						<div className="anime__cards">
+							{this.state.fantasy.map((anime) => (
+								<Card
+									img={anime.attributes.posterImage.small}
+									id={anime.id}
+									key={anime.id}
+								/>
 							))}
 						</div>
 					</div>
