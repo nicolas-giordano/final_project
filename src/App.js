@@ -24,10 +24,11 @@ class App extends Component {
 			if (this.readyState === 4 && this.status === 200) {
 				let data = JSON.parse(this.responseText).data;
 				self.setState({ trending: data });
+				console.log(data);
 			}
 		};
 
-		request_trending.open('GET', 'https://kitsu.io/api/edge/anime');
+		request_trending.open('GET', 'https://kitsu.io/api/edge/trending/anime');
 		request_trending.send();
 
 		request_combat.onreadystatechange = function () {
@@ -38,7 +39,7 @@ class App extends Component {
 		};
 		request_combat.open(
 			'GET',
-			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=combat'
+			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=mystery'
 		);
 		request_combat.send();
 
@@ -69,6 +70,8 @@ class App extends Component {
 									img={anime.attributes.posterImage.small}
 									id={anime.id}
 									key={anime.id}
+									name={anime.attributes.titles.en}
+									altName={anime.attributes.slug}
 								/>
 							))}
 						</div>
@@ -81,6 +84,8 @@ class App extends Component {
 									img={anime.attributes.posterImage.small}
 									id={anime.id}
 									key={anime.id}
+									name={anime.attributes.titles.en}
+									altName={anime.attributes.slug}
 								/>
 							))}
 						</div>
@@ -93,6 +98,8 @@ class App extends Component {
 									img={anime.attributes.posterImage.small}
 									id={anime.id}
 									key={anime.id}
+									name={anime.attributes.titles.en}
+									altName={anime.attributes.slug}
 								/>
 							))}
 						</div>

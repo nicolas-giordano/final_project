@@ -17,23 +17,23 @@ class Header extends Component {
 				<div className="header__left">
 					<span
 						className="header__item"
-						id={
-							document.getElementsByClassName('header__item')[0].innerHTML ===
-							this.state.current
-								? 'current'
-								: ''
-						}
+						// id={
+						// 	document.getElementsByClassName('header__item')[0].innerHTML ===
+						// 	this.state.current
+						// 		? 'current'
+						// 		: ''
+						// }
 					>
 						Home
 					</span>
 					<div className="categories__menu">
 						<span
-							id={
-								document.getElementsByClassName('header__item')[1].innerHTML ===
-								this.state.current
-									? 'current'
-									: ''
-							}
+							// id={
+							// 	document.getElementsByClassName('header__item')[1].innerHTML ===
+							// 	this.state.current
+							// 		? 'current'
+							// 		: ''
+							// }
 							className="header__item"
 						>
 							Categories
@@ -46,12 +46,12 @@ class Header extends Component {
 					</div>
 					<span
 						className="header__item"
-						id={
-							document.getElementsByClassName('header__item')[2].innerHTML ===
-							this.state.current
-								? 'current'
-								: ''
-						}
+						// id={
+						// 	document.getElementsByClassName('header__item')[2].innerHTML ===
+						// 	this.state.current
+						// 		? 'current'
+						// 		: ''
+						// }
 					>
 						Top 100
 					</span>
