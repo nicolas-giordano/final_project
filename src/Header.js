@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
+import Top from './Top';
+
 import './Header.css';
 
 class Header extends Component {
@@ -24,7 +27,7 @@ class Header extends Component {
 						// 		: ''
 						// }
 					>
-						Home
+						<NavLink to="/">Home</NavLink>
 					</span>
 					<div className="categories__menu">
 						<span
@@ -53,7 +56,7 @@ class Header extends Component {
 						// 		: ''
 						// }
 					>
-						Top 100
+						<NavLink to="top">Top 100</NavLink>
 					</span>
 				</div>
 				<div className="header__right">
