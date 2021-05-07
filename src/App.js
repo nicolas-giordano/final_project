@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Card from './Card.js';
 import Header from './Header.js';
 import Home from './Home.js';
-import Top from './Top.js';
+import Ranking from './Ranking.js';
 
 import './App.css';
 
@@ -17,7 +16,7 @@ class App extends Component {
 						<Header />
 						<Switch>
 							<Route path="/" component={Home} exact />
-							<Route path="top" component={Top} exact />
+							<Route path="/top_100" component={Ranking} exact />
 						</Switch>
 					</div>
 				</BrowserRouter>

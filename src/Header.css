@@ -90,3 +90,12 @@
 #current:hover {
 	cursor: default;
 }
+
+.nav__link {
+	color: #c2c2c2;
+	text-decoration: none;
+}
+
+.nav__link:hover {
+	color: rgb(146, 143, 143);
+}
