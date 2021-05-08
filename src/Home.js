@@ -18,31 +18,31 @@ class Home extends Component {
 	componentDidMount() {
 		let self = this;
 		let request_trending = new XMLHttpRequest();
-		let request_combat = new XMLHttpRequest();
+		let request_mystery = new XMLHttpRequest();
 		let request_fantasy = new XMLHttpRequest();
 
 		request_trending.onreadystatechange = function () {
 			if (this.readyState === 4 && this.status === 200) {
 				let data = JSON.parse(this.responseText).data;
 				self.setState({ trending: data });
-				console.log(data);
+				// console.log(data);
 			}
 		};
 
 		request_trending.open('GET', 'https://kitsu.io/api/edge/trending/anime');
 		request_trending.send();
 
-		request_combat.onreadystatechange = function () {
+		request_mystery.onreadystatechange = function () {
 			if (this.readyState === 4 && this.status === 200) {
 				let data = JSON.parse(this.responseText).data;
 				self.setState({ combat: data });
 			}
 		};
-		request_combat.open(
+		request_mystery.open(
 			'GET',
 			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=mystery'
 		);
-		request_combat.send();
+		request_mystery.send();
 
 		request_fantasy.onreadystatechange = function () {
 			if (this.readyState === 4 && this.status === 200) {
@@ -76,8 +76,8 @@ class Home extends Component {
 							))}
 						</div>
 					</div>
-					<div className="combat">
-						<h1>Fighting</h1>
+					<div className="Mystery">
+						<h1>Mystery</h1>
 						<div className="anime__cards">
 							{this.state.combat.map((anime) => (
 								<Card

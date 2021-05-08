@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import './Card.css';
 import Tooltip from '@material-ui/core/Tooltip';
+
+import './Card.css';
 
 class Card extends Component {
 	render() {
 		return (
-			<>
+			<div>
 				<div className="card">
 					<Tooltip
 						title={
@@ -16,10 +17,15 @@ class Card extends Component {
 						placement="top"
 						className="tooltip"
 					>
-						<img src={this.props.img} alt="other" key={this.props.id} />
+						<a
+							href={'https://www.kitsu.io/anime/' + this.props.id}
+							target="_blank"
+						>
+							<img src={this.props.img} alt="other" key={this.props.id} />
+						</a>
 					</Tooltip>
 				</div>
-			</>
+			</div>
 		);
 	}
 }

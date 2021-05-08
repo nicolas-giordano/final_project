@@ -10,17 +10,21 @@ import './App.css';
 class App extends Component {
 	render() {
 		return (
-			<>
+			<div>
 				<BrowserRouter>
 					<div>
 						<Header />
 						<Switch>
-							<Route path="/" component={Home} exact />
-							<Route path="/top_100" component={Ranking} exact />
+							<Route path="/final_project" component={Home} exact />
+							<Route
+								path="/final_project/top_20_anime"
+								component={Ranking}
+								exact
+							/>
 						</Switch>
 					</div>
 				</BrowserRouter>
-			</>
+			</div>
 		);
 	}
 }

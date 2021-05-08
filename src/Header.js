@@ -26,7 +26,7 @@ class Header extends Component {
 						// 		: ''
 						// }
 					>
-						<NavLink to="/" className="nav__link">
+						<NavLink to="/final_project" className="nav__link">
 							Home
 						</NavLink>
 					</span>
@@ -57,8 +57,8 @@ class Header extends Component {
 						// 		: ''
 						// }
 					>
-						<NavLink to="/top_100" className="nav__link">
-							Top 100
+						<NavLink to="/final_project/top_20_anime" className="nav__link">
+							Top 20 Anime
 						</NavLink>
 					</span>
 				</div>

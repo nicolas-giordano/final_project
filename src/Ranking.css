@@ -1,0 +1,32 @@
+.ranking__header {
+	color: rgb(216, 214, 214);
+	text-align: center;
+}
+
+.ranking_list {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.ranking__list__item {
+	font-size: 20px;
+	color: rgb(201, 201, 201);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 45px;
+}
+
+.list__name {
+	font-size: 32px;
+	color: white;
+	padding-bottom: 10px;
+}
+
+.list__body {
+	display: flex;
+	justify-content: space-between;
+}
+
+.list__text {
+	width: 70%;
+}
