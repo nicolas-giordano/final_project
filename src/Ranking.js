@@ -41,11 +41,16 @@ class Ranking extends Component {
 						<ol reversed>
 							{this.state.anime.map((anime) => (
 								<div className="ranking__list__item">
-									<li className="list__name">
-										{anime.attributes.titles.en
-											? anime.attributes.titles.en
-											: anime.attributes.titles.en_jp}
-									</li>
+									<a
+										href={'https://www.kitsu.io/anime/' + anime.id}
+										target="_blank"
+									>
+										<li className="list__name">
+											{anime.attributes.titles.en
+												? anime.attributes.titles.en
+												: anime.attributes.titles.en_jp}
+										</li>
+									</a>
 									<div className="list__body">
 										<p className="list__text">{anime.attributes.synopsis}</p>
 										<img

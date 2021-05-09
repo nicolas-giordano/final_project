@@ -16,17 +16,29 @@
 	padding-bottom: 45px;
 }
 
+.ranking__list__item > a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
 .list__name {
 	font-size: 32px;
-	color: white;
+	color: dodgerblue;
 	padding-bottom: 10px;
 }
 
 .list__body {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .list__text {
-	width: 70%;
+	text-indent: 50px;
+	margin-left: 200px;
+	width: 50%;
+}
+
+.list__image {
+	margin-right: 300px;
 }
