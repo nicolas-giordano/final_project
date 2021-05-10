@@ -1,0 +1,26 @@
+#anime__listings {
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+#anime__listings h1 {
+	margin-bottom: 8px;
+	margin-left: 60px;
+	color: #e5e5e5;
+	font-size: 1.4vw;
+}
+
+.anime__cards {
+	margin: 0 60px;
+	padding-bottom: 25px;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+.anime__cards > :hover {
+	transform: scale(1.08);
+	opacity: 1;
+}
