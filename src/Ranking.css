@@ -1,0 +1,44 @@
+.ranking__header {
+	color: rgb(216, 214, 214);
+	text-align: center;
+}
+
+.ranking_list {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.ranking__list__item {
+	font-size: 20px;
+	color: rgb(201, 201, 201);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 45px;
+}
+
+.ranking__list__item > a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.list__name {
+	font-size: 32px;
+	color: dodgerblue;
+	padding-bottom: 10px;
+}
+
+.list__body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.list__text {
+	text-indent: 50px;
+	margin-left: 200px;
+	width: 50%;
+}
+
+.list__image {
+	margin-right: 300px;
+}
