@@ -12,6 +12,7 @@ class Home extends Component {
 			trending: [],
 			combat: [],
 			fantasy: [],
+			school: [],
 		};
 	}
 
@@ -20,12 +21,13 @@ class Home extends Component {
 		let request_trending = new XMLHttpRequest();
 		let request_mystery = new XMLHttpRequest();
 		let request_fantasy = new XMLHttpRequest();
+		let request_school = new XMLHttpRequest();
 
 		request_trending.onreadystatechange = function () {
 			if (this.readyState === 4 && this.status === 200) {
 				let data = JSON.parse(this.responseText).data;
 				self.setState({ trending: data });
-				// console.log(data);
+				console.log(data);
 			}
 		};
 
@@ -40,7 +42,7 @@ class Home extends Component {
 		};
 		request_mystery.open(
 			'GET',
-			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=mystery'
+			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=mystery&sort=-averageRating&page[limit]=15'
 		);
 		request_mystery.send();
 
@@ -53,9 +55,21 @@ class Home extends Component {
 
 		request_fantasy.open(
 			'GET',
-			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=fantasy'
+			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=fantasy&sort=-averageRating&page[limit]=15'
 		);
 		request_fantasy.send();
+
+		request_school.onreadystatechange = function () {
+			if (this.readyState === 4 && this.status === 200) {
+				let data = JSON.parse(this.responseText).data;
+				self.setState({ school: data });
+			}
+		};
+		request_school.open(
+			'GET',
+			'https://kitsu.io/api/edge/anime?filter%5Bcategories%5D=school&sort=-averageRating&page[limit]=15'
+		);
+		request_school.send();
 	}
 
 	render() {
@@ -76,10 +90,24 @@ class Home extends Component {
 							))}
 						</div>
 					</div>
-					<div className="Mystery">
+					<div className="mystery">
 						<h1>Mystery</h1>
 						<div className="anime__cards">
 							{this.state.combat.map((anime) => (
+								<Card
+									img={anime.attributes.posterImage.small}
+									id={anime.id}
+									key={anime.id}
+									name={anime.attributes.titles.en}
+									altName={anime.attributes.slug}
+								/>
+							))}
+						</div>
+					</div>
+					<div className="school">
+						<h1>School Life</h1>
+						<div className="anime__cards">
+							{this.state.school.map((anime) => (
 								<Card
 									img={anime.attributes.posterImage.small}
 									id={anime.id}

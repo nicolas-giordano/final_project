@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import Categories from './Categories.js';
 import Header from './Header.js';
 import Home from './Home.js';
 import Ranking from './Ranking.js';
@@ -19,6 +20,11 @@ class App extends Component {
 							<Route
 								path="/final_project/top_20_anime"
 								component={Ranking}
+								exact
+							/>
+							<Route
+								path="/final_project/Categories"
+								component={Categories}
 								exact
 							/>
 						</Switch>

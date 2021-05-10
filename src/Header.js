@@ -9,13 +9,37 @@ class Header extends Component {
 		super(props);
 
 		this.state = {
-			current: 'Home',
+			categories: [],
+			dropdown: [],
 		};
+	}
+
+	componentDidMount() {
+		let self = this;
+		let categories = new XMLHttpRequest();
+
+		categories.onreadystatechange = function () {
+			if (this.readyState === 4 && this.status === 200) {
+				let data = JSON.parse(this.responseText).data;
+				data.sort((a, b) =>
+					a.attributes.totalMediaCount < b.attributes.totalMediaCount ? 1 : -1
+				);
+				self.setState({ categories: data });
+				self.setState({ dropdown: data.slice(0, 10) });
+			}
+		};
+
+		categories.open(
+			'GET',
+			'https://kitsu.io/api/edge/categories?page[limit]=500'
+		);
+		categories.send();
 	}
 
 	render() {
 		return (
 			<section className="header">
+				{console.log(this.state)}
 				<div className="header__left">
 					<span
 						className="header__item"
@@ -40,12 +64,22 @@ class Header extends Component {
 							// }
 							className="header__item"
 						>
-							Categories
+							<NavLink to="/final_project/Categories" className="nav__link">
+								Categories
+							</NavLink>
 						</span>
 						<div className="dropdown">
-							<a>Test1</a>
-							<a>Test2</a>
-							<a>Test3</a>
+							{this.state.dropdown.map((category) => (
+								<a
+									href={
+										'https://www.kitsu.io/explore/anime/category/' +
+										category.attributes.slug
+									}
+									target="_blank"
+								>
+									{category.attributes.title}
+								</a>
+							))}
 						</div>
 					</div>
 					<span

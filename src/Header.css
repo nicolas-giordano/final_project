@@ -47,6 +47,12 @@
 	z-index: 10;
 }
 
+.dropdown a {
+	text-decoration: none;
+	color: white;
+	padding-bottom: 5px;
+}
+
 .dropdown a:hover {
 	text-decoration: underline;
 }

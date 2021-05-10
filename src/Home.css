@@ -16,4 +16,11 @@
 	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+.anime__cards > :hover {
+	transform: scale(1.08);
+	opacity: 1;
 }
